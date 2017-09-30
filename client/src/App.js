@@ -46,7 +46,7 @@ class App extends Component {
                         name="recipeSearch"
                         value={this.state.recipeSearch}
                         onChange={this.handleInputChange}
-                        placeholder="Search For a Recipe"
+                        placeholder="Search for drinks based on an ingredient"
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
