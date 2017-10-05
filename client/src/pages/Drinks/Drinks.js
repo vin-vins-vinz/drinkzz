@@ -44,10 +44,12 @@ class Drinks extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.ingredient) {
-      API.getDrink({
-        ingredient: this.state.ingredient,
+      API.getDrink(this.state.ingredient)
+        .then(res => {
+          this.setState({
+            drinks: res.data
+        })
       })
-        .then(res => this.loadDrinks())
         .catch(err => console.log(err));
     }
   };
@@ -83,7 +85,7 @@ class Drinks extends Component {
             {this.state.drinks ? (
               <List>
                 {this.state.drinks.map(drink => (
-                  <ListItem>
+                  <ListItem key={drink._id}>
                     <Link to={"/drinks/" + drink._id}>
                       <strong>
                         {drink.title}

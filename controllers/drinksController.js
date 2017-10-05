@@ -11,16 +11,16 @@ module.exports = {
   // },
   find: function (req, res) {
     db.Drink
-    .find({ingredient: req.params.ingredient}, req.body)
+    .find({ingredient: req.params}, req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
-    db.Drink
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+  // findById: function(req, res) {
+  //   db.Drink
+  //     .findById(req.params.id)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
   // create: function(req, res) {
   //   db.Book
   //     .create(req.body)

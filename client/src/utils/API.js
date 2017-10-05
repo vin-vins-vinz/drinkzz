@@ -9,7 +9,6 @@ export default {
 
   getDrink: function(ingredient) {
     console.log(ingredient);
-    console.log("query run");
     return axios.get("/api/drinks/" + ingredient);
   }
   
