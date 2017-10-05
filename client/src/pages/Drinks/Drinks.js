@@ -46,10 +46,11 @@ class Drinks extends Component {
     if (this.state.ingredient) {
       API.getDrink(this.state.ingredient)
         .then(res => {
+          // console.log(res.data)
           this.setState({
             drinks: res.data
+          })
         })
-      })
         .catch(err => console.log(err));
     }
   };
@@ -84,7 +85,7 @@ class Drinks extends Component {
             </Jumbotron>
             {this.state.drinks ? (
               <List>
-                {this.state.drinks.map(drink => (
+                {this.state.drinks.map(drink => 
                   <ListItem key={drink._id}>
                     <Link to={"/drinks/" + drink._id}>
                       <strong>
@@ -92,7 +93,7 @@ class Drinks extends Component {
                       </strong>
                     </Link>
                   </ListItem>
-                ))}
+                )}
               </List>
             ) : (
               <h3>No Results to Display</h3>
