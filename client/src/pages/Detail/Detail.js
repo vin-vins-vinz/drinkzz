@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
-class Detail extends Component {``
+class Detail extends Component {
   state = {
     drink: {
       ingredient:[],
