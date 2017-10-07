@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
+import MainPanel from "../../components/Jumbotron";
+import {Card, Icon, Image, Button} from "semantic-ui-react"
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -60,10 +61,8 @@ class Drinks extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>What drinks can I make?</h1>
-            </Jumbotron>
-            <form>
+            <MainPanel>
+              <form>
               <Input
                 value={this.state.ingredient}
                 onChange={this.handleInputChange}
@@ -78,26 +77,28 @@ class Drinks extends Component {
                 Submit ingredient
               </FormBtn>
             </form>
+            </MainPanel>
+            
           </Col>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>Drinks can be made with your ingredients.</h1>
-            </Jumbotron>
             {this.state.drinks ? (
-              <List>
+              <Card.Group>
                 {this.state.drinks.map(drink => 
-                  <ListItem key={drink._id}>
+                  <Card raised key={drink._id}>
                     <Link to={"/drinks/" + drink._id}>
-                      <strong>
-                        {drink.title}
-                      </strong>
+                      <Image src={drink.picture} />
+                        <Card.Content>
+                          <Card.Header>{drink.title}</Card.Header>
+                        </Card.Content>
                     </Link>
-                  </ListItem>
+                    </Card>
                 )}
-              </List>
+              </Card.Group>
             ) : (
               <h3>No Results to Display</h3>
             )}
+
+
           </Col>
         </Row>
       </Container>

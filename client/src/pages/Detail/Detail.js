@@ -4,14 +4,18 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
-class Detail extends Component {
+class Detail extends Component {``
   state = {
-    drink: {}
+    drink: {
+      ingredient:[],
+      instructions: ""
+    }
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getDrink(this.props.match.params.ingredient)
+    console.log(this.props.match.params.id)
+    API.getDetail(this.props.match.params.id)
       .then(res => this.setState({ drink: res.data }))
       .catch(err => console.log(err));
   }
@@ -23,7 +27,7 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.drink.title} by {this.state.drink.ingredient}
+                {this.state.drink.title} {this.state.drink.ingredient}
               </h1>
             </Jumbotron>
           </Col>
@@ -33,13 +37,16 @@ class Detail extends Component {
             <article>
               <img src={this.state.drink.picture} alt="placeholder"/>
               <h1>Ingredient</h1>
-              <p>
-                {this.state.drink.ingredient}
-              </p>
+              <ul>
+                {this.state.drink.ingredient.map((ingredient) => 
+                  <li>{ingredient}</li>
+                  )}
+              </ul>
               <h1>Instruction</h1>
-              <p>
-                {this.state.drink.instruction}
-              </p>
+              <ol>
+                {this.state.drink.instructions.split(", ").map((instructions) => 
+                  <li>{instructions}</li>)}
+              </ol>
             </article>
           </Col>
         </Row>

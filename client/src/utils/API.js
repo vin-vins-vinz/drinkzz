@@ -9,7 +9,11 @@ export default {
 
   getDrink: function(ingredient) {
     console.log(ingredient);
-    return axios.get("/api/drinks/" + ingredient);
+    return axios.get("/api/drinks/search/" + ingredient);
+  },
+  getDetail: function(id) {
+    console.log(id);
+    return axios.get("/api/drinks/" + id);
   }
   
   // getDrink: function(ingredient) {
