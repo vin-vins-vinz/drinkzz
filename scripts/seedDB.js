@@ -109,16 +109,9 @@ const drinkSeed = [
     ingredient: ['orange juice','champagne'],
     picture: "https://cdn.liquor.com/wp-content/uploads/2016/07/23122415/mimosa-recipe-720-square.jpg",
     instructions: "In a champagne flute glass, fill half with orange juice, and fill with champagne. tilt glass while serving champagne"
-  },
-//   {
-//     name: ,
-//     title: ,
-//     ingredient: [],
-//     picture: ,
-//     instruction: 
-//   },
+  }
+  ];
 
-];
 
 db.Drink
   .remove({})

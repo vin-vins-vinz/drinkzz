@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Drinks from "./pages/Drinks";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 
 const App = () =>
   <Router>
     <div>
-      <Nav />
       <Switch>
         <Route exact path="/" component={Drinks} />
         <Route exact path="/drinks" component={Drinks} />

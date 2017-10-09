@@ -11,11 +11,10 @@ export default {
     console.log(ingredient);
     return axios.get("/api/drinks/search/" + ingredient);
   },
-
-  getDrinkByType: function(userSelectedType) {
-    console.log(userSelectedType);
-    return axios.get("/api/drinks/" + userSelectedType);
-  },
+  getDetail: function(id) {
+    console.log(id);
+    return axios.get("/api/drinks/" + id);
+  }
   
   // getDrink: function(ingredient) {
   //   console.log("Query Run");
@@ -32,9 +31,9 @@ export default {
     
 
   // // Gets the drink with the given id
-  getDrinkById: function(id) {
-    return axios.get("/api/drinks/" + id);
-  },
+  // getDrinkById: function(id) {
+  //   return axios.get("/api/drinks/" + id);
+  // },
   // // Deletes the book with the given id
   // deleteBook: function(id) {
   //   return axios.delete("/api/books/" + id);
