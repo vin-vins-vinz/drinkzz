@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -20,19 +19,14 @@ class Drinks extends Component {
     // this.loadDrinks();
   }
 
-  loadDrinks = () => {
-    API.getDrink()
-      .then(res =>
-        this.setState({ drinks: res.data, title: "", picture: "", ingredient: "", instruction: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
+  // loadDrinks = () => {
+  //   API.getDrink()
+  //     .then(res =>
+  //       this.setState({ drinks: res.data, title: "", picture: "", ingredient: "", instruction: "" })
+  //     )
   //     .catch(err => console.log(err));
   // };
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -41,7 +35,7 @@ class Drinks extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleIngredientFormSubmit = event => {
     event.preventDefault();
     if (this.state.ingredient) {
       API.getDrink(this.state.ingredient)
@@ -54,6 +48,19 @@ class Drinks extends Component {
         .catch(err => console.log(err));
     }
   };
+
+  // handleDrinkTypeFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.userSelectedType) {
+  //     API.getDrinkByType(this.state.userSelectedType)
+  //       .then(res => {
+  //         this.setState({
+  //           drinks: res.data
+  //         })
+  //       })
+  //       .catch(err => console.log(err));
+  //   }
+  // };
 
   render() {
     return (
@@ -73,11 +80,13 @@ class Drinks extends Component {
               
               <FormBtn
                 disabled={!(this.state.ingredient)}
-                onClick={this.handleFormSubmit}
+                onClick={this.handleIngredientFormSubmit}
               >
-                Submit ingredient
+                Submit Ingredient
               </FormBtn>
             </form>
+ 
+           
           </Col>
           <Col size="md-6">
             <Jumbotron>

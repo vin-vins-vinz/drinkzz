@@ -8,7 +8,7 @@ const drinksController = require("../../controllers/drinksController");
 
 // Matches with "/api/drinks/:ingredient"
 router
-  .route("/:ingredient")
+  .route("/search/:ingredient")
   .get(drinksController.find)
 // Matches with "/api/books/:id"
 router

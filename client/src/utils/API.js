@@ -9,8 +9,13 @@ export default {
 
   getDrink: function(ingredient) {
     console.log(ingredient);
-    return axios.get("/api/drinks/" + ingredient);
-  }
+    return axios.get("/api/drinks/search/" + ingredient);
+  },
+
+  getDrinkByType: function(userSelectedType) {
+    console.log(userSelectedType);
+    return axios.get("/api/drinks/" + userSelectedType);
+  },
   
   // getDrink: function(ingredient) {
   //   console.log("Query Run");
@@ -27,9 +32,9 @@ export default {
     
 
   // // Gets the drink with the given id
-  // getBook: function(id) {
-  //   return axios.get("/api/drinks/" + id);
-  // },
+  getDrinkById: function(id) {
+    return axios.get("/api/drinks/" + id);
+  },
   // // Deletes the book with the given id
   // deleteBook: function(id) {
   //   return axios.delete("/api/books/" + id);
