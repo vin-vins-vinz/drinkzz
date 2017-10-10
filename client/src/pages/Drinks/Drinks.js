@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
 import MainPanel from "../../components/Jumbotron";
-import {Card, Icon, Image, Button} from "semantic-ui-react"
+import {Card, Image } from "semantic-ui-react"
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+// import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
 
 class Drinks extends Component {
@@ -40,7 +40,7 @@ class Drinks extends Component {
   handleIngredientFormSubmit = event => {
     event.preventDefault();
     if (this.state.ingredient) {
-      API.getDrink(this.state.ingredient)
+      API.getDrink(this.state.ingredient.toLowerCase())
         .then(res => {
           // console.log(res.data)
           this.setState({
@@ -75,7 +75,7 @@ class Drinks extends Component {
                 value={this.state.ingredient}
                 onChange={this.handleInputChange}
                 name="ingredient"
-                placeholder="ingredient (required)"
+                placeholder="Enter an ingredient"
               />
               
               <FormBtn
