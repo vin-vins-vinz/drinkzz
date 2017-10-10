@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import "./Detail.css"
 
 class Detail extends Component {
   state = {
@@ -19,7 +20,7 @@ class Detail extends Component {
       .then(res => this.setState({ drink: res.data }))
       .catch(err => console.log(err));
   }
-
+// {this.state.drink.ingredient}
   render() {
     return (
       <Container fluid>
@@ -27,7 +28,7 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.drink.title} {this.state.drink.ingredient}
+                {this.state.drink.title}
               </h1>
             </Jumbotron>
           </Col>
@@ -39,7 +40,7 @@ class Detail extends Component {
               <h1>Ingredient</h1>
               <ul>
                 {this.state.drink.ingredient.map((ingredient) => 
-                  <li>{ingredient}</li>
+                  <li className="capitalize">{ingredient}</li>
                   )}
               </ul>
               <h1>Instruction</h1>
