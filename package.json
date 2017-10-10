@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "cd client && npm run start",
+    "client": "cd client && npm run start && npm run seed",
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\" \"npm run seed\"",
     "build": "cd client && npm run build",
-    "deploy": "npm run build && git add . && git commit -m \"Building for production\" \"npm run seed\" && git push heroku master",
+    "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "seed": "node scripts/seedDB",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
