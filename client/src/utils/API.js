@@ -31,7 +31,7 @@ export default {
     
 
   // // Gets the drink with the given id
-  // getBook: function(id) {
+  // getDrinkById: function(id) {
   //   return axios.get("/api/drinks/" + id);
   // },
   // // Deletes the book with the given id

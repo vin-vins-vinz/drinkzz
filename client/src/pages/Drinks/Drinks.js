@@ -21,19 +21,14 @@ class Drinks extends Component {
     // this.loadDrinks();
   }
 
-  loadDrinks = () => {
-    API.getDrink()
-      .then(res =>
-        this.setState({ drinks: res.data, title: "", picture: "", ingredient: "", instruction: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
+  // loadDrinks = () => {
+  //   API.getDrink()
+  //     .then(res =>
+  //       this.setState({ drinks: res.data, title: "", picture: "", ingredient: "", instruction: "" })
+  //     )
   //     .catch(err => console.log(err));
   // };
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -42,7 +37,7 @@ class Drinks extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleIngredientFormSubmit = event => {
     event.preventDefault();
     if (this.state.ingredient) {
       API.getDrink(this.state.ingredient.toLowerCase())
@@ -55,6 +50,19 @@ class Drinks extends Component {
         .catch(err => console.log(err));
     }
   };
+
+  // handleDrinkTypeFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.userSelectedType) {
+  //     API.getDrinkByType(this.state.userSelectedType)
+  //       .then(res => {
+  //         this.setState({
+  //           drinks: res.data
+  //         })
+  //       })
+  //       .catch(err => console.log(err));
+  //   }
+  // };
 
   render() {
     return (
@@ -72,9 +80,9 @@ class Drinks extends Component {
               
               <FormBtn
                 disabled={!(this.state.ingredient)}
-                onClick={this.handleFormSubmit}
+                onClick={this.handleIngredientFormSubmit}
               >
-                Submit ingredient
+                Submit Ingredient
               </FormBtn>
             </form>
             </MainPanel>
@@ -88,6 +96,12 @@ class Drinks extends Component {
                     <Link to={"/drinks/" + drink._id}>
                       <Image src={drink.picture} />
                         <Card.Content>
+                          <div class="content">
+                          <span class="right floated">
+                            <i class="heart outline like icon"></i>
+                            Fav: {drink.favorite}
+                          </span>
+                          </div>
                           <Card.Header>{drink.title}</Card.Header>
                         </Card.Content>
                     </Link>
