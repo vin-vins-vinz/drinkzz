@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import Jumbotron from "../../components/Jumbotron";
-=======
 // import DeleteBtn from "../../components/DeleteBtn";
 import MainPanel from "../../components/Jumbotron";
 import {Card, Icon, Image, Button} from "semantic-ui-react"
->>>>>>> ab94f62739d31573dde0dc68698a57b9ccf64192
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -100,6 +96,12 @@ class Drinks extends Component {
                     <Link to={"/drinks/" + drink._id}>
                       <Image src={drink.picture} />
                         <Card.Content>
+                          <div class="content">
+                          <span class="right floated">
+                            <i class="heart outline like icon"></i>
+                            Fav: {drink.favorite}
+                          </span>
+                          </div>
                           <Card.Header>{drink.title}</Card.Header>
                         </Card.Content>
                     </Link>
