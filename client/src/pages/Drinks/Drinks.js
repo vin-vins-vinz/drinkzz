@@ -66,6 +66,7 @@ class Drinks extends Component {
   // };
 
   render() {
+    // const { visible } = this.state;
     return (
       <Container fluid>
         <Row>
