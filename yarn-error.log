@@ -1,0 +1,66 @@
+Arguments: 
+  /usr/local/Cellar/node/7.8.0/bin/node /usr/local/bin/yarn deploy
+
+PATH: 
+  /bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/sbin
+
+Yarn version: 
+  1.1.0
+
+Node version: 
+  8.6.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "mern",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "server": "node server.js",
+      "client": "cd client && npm run start",
+      "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\" \"npm run seed\"",
+      "build": "cd client && npm run build",
+  <<<<<<< HEAD
+      "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
+      "seed": "node scripts/seedDB.js",
+  =======
+      "deploy": "npm run build && git add . && git commit -m \"Building for production\" \"npm run seed\" && git push heroku master",
+      "seed": "node scripts/seedDB",
+  >>>>>>> c0492962fdcdbc11b06ab8a49878d6f9d3e62e84
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "concurrently": "^3.5.0",
+      "nodemon": "^1.11.0",
+      "webpack": "^3.6.0"
+    },
+    "dependencies": {
+      "axios": "^0.16.2",
+      "body-parser": "^1.17.2",
+      "express": "^4.15.4",
+      "mongoose": "^4.11.7",
+      "react-router-dom": "^4.1.2",
+      "semantic-ui-react": "^0.74.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/Nicky/Desktop/code/Projects/project3/drinkzz/package.json: Unexpected token < in JSON at position 337
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:764:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+      at <anonymous>

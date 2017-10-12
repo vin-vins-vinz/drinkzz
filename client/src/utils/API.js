@@ -14,7 +14,9 @@ export default {
   getDetail: function(id) {
     console.log(id);
     return axios.get("/api/drinks/" + id);
-  }
+  },
+
+
   
   // getDrink: function(ingredient) {
   //   console.log("Query Run");

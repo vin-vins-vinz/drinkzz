@@ -8,13 +8,8 @@
     "client": "cd client && npm run start",
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\" \"npm run seed\"",
     "build": "cd client && npm run build",
-<<<<<<< HEAD
-    "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "seed": "node scripts/seedDB.js",
-=======
-    "deploy": "npm run build && git add . && git commit -m \"Building for production\" \"npm run seed\" && git push heroku master",
+    "deploy": "npm run build && git add -A && git commit -m \"Building for production\" \"npm run seed\" && git push heroku master",
     "seed": "node scripts/seedDB",
->>>>>>> c0492962fdcdbc11b06ab8a49878d6f9d3e62e84
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

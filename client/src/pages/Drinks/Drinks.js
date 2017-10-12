@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
 import MainPanel from "../../components/Jumbotron";
-import {Card, Image } from "semantic-ui-react"
+import {Card, Image, Button, Content, i } from "semantic-ui-react"
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -18,6 +18,7 @@ class Drinks extends Component {
   };
 
   componentDidMount() {
+    // if 
     // this.loadDrinks();
   }
 
@@ -40,6 +41,7 @@ class Drinks extends Component {
   handleIngredientFormSubmit = event => {
     event.preventDefault();
     if (this.state.ingredient) {
+      // save cookies ingredient 
       API.getDrink(this.state.ingredient.toLowerCase())
         .then(res => {
           // console.log(res.data)
@@ -49,6 +51,23 @@ class Drinks extends Component {
         })
         .catch(err => console.log(err));
     }
+  };
+
+  handleRandomBtn = event => {
+    var ingredientArr = ['club soda', 'tequila', 'rum', '7-up', 'coffee', 'champagne', 'ginger beer', 'lemon juice', 'sweet vermouth', 'gin', 'bitters','simple syrup', 'sugar', 'vodka', 'whiskey', 'soda', 'lime'];
+    var random = Math.floor(Math.random()*ingredientArr.length);
+    var randomChoice = ingredientArr[random];
+
+    event.preventDefault();
+  
+      API.getDrink(randomChoice)
+      .then(res => {
+        this.setState({
+          drinks: [res.data[0]]
+        })
+      })
+      .catch(err => console.log(err));
+    
   };
 
   // handleDrinkTypeFormSubmit = event => {
@@ -85,6 +104,13 @@ class Drinks extends Component {
                 Submit Ingredient
               </FormBtn>
             </form>
+
+              <Button
+                onClick={this.handleRandomBtn}
+              >
+                Random Drink?
+              </Button>
+            
             </MainPanel>
             
           </Col>
