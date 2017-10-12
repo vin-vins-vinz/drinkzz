@@ -15,8 +15,11 @@ app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+require('./scripts/seedDB.js');
+
 
 // var MONGODB_URI = "mongodb://<dbuser>:<dbpassword>@ds113795.mlab.com:13795/heroku_bj2rs0q2";
+
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/drinkDB",

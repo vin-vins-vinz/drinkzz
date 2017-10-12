@@ -1,18 +1,26 @@
 .ui.message{
 	background-color: transparent;
 	text-align: center;
+	padding-top: 50px;
 }
 .column {
-	background-image: url("http://media.philstar.com/images/the-philippine-star/world/20160514/Liquor-Bottles-Bar.jpg");
-
+	background-image: url("https://media.timeout.com/images/103644030/image.jpg");
+	background-size: cover;
 }
 
-.ui.header{
+
+h1.ui.header{
 	color: white;
+	font-size: 60px;
+	font-family: 'Indie Flower', cursive;
+	margin-top: 10%;
 }
-h1 {
-	font-size: 80px;
-}
-.jumbotron p {
+
+.jumboContent {
 	color: white;
+	font-size: 20px;
+}
+
+.cocktailGlass {
+	font-size: 5px;
 }

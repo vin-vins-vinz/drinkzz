@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import MainPanel from "../../components/Jumbotron";
 import API from "../../utils/API";
 import "./Detail.css"
+import { Header } from 'semantic-ui-react'
+import Nav from '../../components/Nav'
+// import Sidebar from '../../components/Sidebar'
 
 class Detail extends Component {
   state = {
@@ -24,13 +27,15 @@ class Detail extends Component {
   render() {
     return (
       <Container fluid>
+      
+      <Nav></Nav>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            <MainPanel>
               <h1>
-                {this.state.drink.title}
+                <Header as='h2'>{this.state.drink.title}</Header>
               </h1>
-            </Jumbotron>
+            </MainPanel>
           </Col>
         </Row>
         <Row>
