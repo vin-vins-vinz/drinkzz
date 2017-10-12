@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
 import MainPanel from "../../components/Jumbotron";
 import {Card, Image } from "semantic-ui-react"
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
-import { Input, FormBtn } from "../../components/Form";
+import { FormBtn } from "../../components/Form";
+import { Input } from 'semantic-ui-react';
+import { Heart, Cocktail } from '../../components/Icons';
+import Bottom from '../../components/Container';
 
 class Drinks extends Component {
   state = {
@@ -76,19 +77,20 @@ class Drinks extends Component {
                 onChange={this.handleInputChange}
                 name="ingredient"
                 placeholder="Enter an ingredient"
-              />
+                icon='search'
+                size='massive'
+                attached='bottom'/>
               
               <FormBtn
                 disabled={!(this.state.ingredient)}
                 onClick={this.handleIngredientFormSubmit}
-              >
-                Submit Ingredient
+                size="massive">
+                <Cocktail />
               </FormBtn>
             </form>
             </MainPanel>
-            
           </Col>
-          <Col size="md-6">
+          <Bottom className = 'bottom'>
             {this.state.drinks ? (
               <Card.Group>
                 {this.state.drinks.map(drink => 
@@ -96,13 +98,8 @@ class Drinks extends Component {
                     <Link to={"/drinks/" + drink._id}>
                       <Image src={drink.picture} />
                         <Card.Content>
-                          <div class="content">
-                          <span class="right floated">
-                            <i class="heart outline like icon"></i>
-                            Fav: {drink.favorite}
-                          </span>
-                          </div>
-                          <Card.Header>{drink.title}</Card.Header>
+                          
+                          <Card.Header><Heart />{drink.title}</Card.Header>
                         </Card.Content>
                     </Link>
                     </Card>
@@ -111,9 +108,7 @@ class Drinks extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-
-
-          </Col>
+          </Bottom>
         </Row>
       </Container>
     );
@@ -121,3 +116,10 @@ class Drinks extends Component {
 }
 
 export default Drinks;
+
+// <div class="content">
+//                           <span class="right floated">
+//                             <i class="heart outline like icon"></i>
+//                             Fav: {drink.favorite}
+//                           </span>
+//                           </div>

@@ -1,0 +1,17 @@
+form {
+	padding-top: 13%;
+	width: 100%;
+
+}
+
+.ui.input input {
+	background-color: rgba(165, 9, 9, .8);
+	color: white;
+}
+/*input::selection, textarea::selection {
+	background-color: green;
+}*/
+
+::selection {
+	background-color: blue;
+}

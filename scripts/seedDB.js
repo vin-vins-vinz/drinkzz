@@ -156,18 +156,70 @@ const drinkSeed = [
     ingredient: ['vodka', 'gin', 'tequila', 'rum', 'triple sec', 'sweet and sour', 'coke'],
     picture: "https://cdn.liquor.com/wp-content/uploads/2017/03/07152907/long-island-iced-tea-720x720-recipe.jpg",
     instructions: "In a collins glass with ice add:, .5 oz Vodka, .5 oz Gin, .5 oz Tequila, .5 oz Rum, .5 oz triple sec, 1.5 oz sweet and sour(lemon juice), Splash of coke, Garnish with lemon wedge"
+  },{
+    name: 'vodka-tonic',
+    title: 'Vodka and Tonic',
+    ingredient: ['vodka', 'tonic water'],
+    picture: '',
+    instructions: 'Get a Highball glass with ice and add:, 1.5 oz Vodka, Fill with Tonic Water'
+  },{
+    name: 'gin-tonic',
+    title: 'Gin and Tonic',
+    ingredient: ['gin', 'tonic Water'],
+    picture: '',
+    instructions: 'Get a Highball glass with ice and add: 1.5 oz Gin, Fill with Tonic Water'
+  },{
+    name: 'john-collins',
+    title: 'John Collins',
+    ingredient: ['bourbon', 'lemon juice'],
+    picture: '',
+    instructions: 'In a shaker add:, 1.5 oz Bourbon, 1.5 oz lemon juice, Shake and strain into Collins Glass, Fill with Club Soda and stir, Garnish with cherry and orange wedge'
+  },{
+    name: 'la-water',
+    title: 'LA Water',
+    ingredient: ['vodka', 'gin', 'tequila', 'rum', 'midori', 'chambord', 'lemon juice'],
+    picture: '',
+    instructions: 'Get a Collins glass with ice and add:, .5 oz of each spirit, .5 oz Midori, .5 Chambord, 1.5 oz Lemon juice.'
+  },{
+    name: 'adios-mf',
+    title: 'Adios Mf(My Friend)',
+    ingredient: ['vodka', 'gin', 'tequila', 'rum', 'blue curacao', 'lemon juice', '7 up'],
+    picture: '',
+    instructions: 'Get a Collins glass with ice and add: .5 oz of each spirit, .5 oz Blue Curacao, 1.5 lemon juice, Spash of your favorite lemon-lime soda, Garnish with lemon wedge.'
+  },{
+    name: 'margarita',
+    title: 'Margarita',
+    ingredient: ['tequila', 'triple sec', 'lime juice', 'sipmle syrup'],
+    picture: '',
+    instructions: 'In a blender or shaker add: 1.5 oz Tequila, 1 oz triple sec, .75 lime juice, .5 oz simple syrup, Shake and strain or blend, Salt on the rim is optional, Garnish with lime.'
+  },{
+    name: 'paloma',
+    title: 'Paloma',
+    ingredient: ['tequila', 'squirt'],
+    picture: '',
+    instructions: 'Get a Highball glass with ice and add:, 1.5 oz tequila, Fill with grapefruit-flavored soda (Squirt or Fresca!), Salt on the rim is optional'
+  },{
+    name: 'michelada',
+    title: 'Michelada',
+    ingredient: ['beer', 'lime juice', 'worcestershire sauce', 'tomato juice'],
+    picture: '',
+    instructions: 'Get a pint glass with ice, Fill with your favorite Mexican beer, .5 oz lime juice, 2-4 dashes of Worcestershire Sauce (or hot sauce, soy sauce), Stir and add tomato juice( tomato juice optional)'
+  },{
+    name: 'martini',
+    title: 'Martini',
+    ingredient: ['dry vermouth', 'gin', 'vodka', 'olive'],
+    picture: '',
+    instructions: 'In a Shaker add:, .5 oz Dry Vermouth, 2.5 Gin or Vodka, Shake and strain into chilled Martini glass, Garnish with an olive'
   }
   ];
-
-
-
-// ,{
-//     name: '',
-//     title: '',
-//     ingredient: [],
-//     picture: '',
-//     instructions: 
-//   }
+// Template for every new drink recipe
+  /* ,{
+    name: '',
+    title: '',
+    ingredient: [],
+    picture: '',
+    instructions: ''
+  } */
 
 
 db.Drink

@@ -1,7 +1,9 @@
-import React from "react";
-import {button} from "semantic-ui-react"
+import React from 'react'
+import { Button } from 'semantic-ui-react'
 
-export const FormBtn = props =>
-  <button {...props} style={{ float: "inherit" }} className="btn btn-success" secondary>
-    {props.children}
-  </button>;
+export const FormBtn = (props) => 
+    <Button {...props} secondary>Submit Ingredient-
+    	{props.children}
+    </Button>
+
+
