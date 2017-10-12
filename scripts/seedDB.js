@@ -17,7 +17,7 @@ const drinkSeed = [
     title: "Old Fashioned",
     ingredient: ['simple syrup', 'angostura Bitters', 'rye Whiskey', 'whiskey'],
     picture: "https://cdn.liquor.com/wp-content/uploads/2012/09/18160012/bourbon-old-fashioned.jpg",
-    instructions: "In a mixing tin add:, .5 oz simple syrup, 2 dashes bitters, 2oz rye whiskey or whiskey, Stir and pour over old fashioned glass with ice, garnish with an orange peel, Enjoy!"
+    instructions: "In a mixing tin add: , .5 oz simple syrup, 2 dashes bitters, 2oz rye whiskey or whiskey, Stir and pour over old fashioned glass with ice, garnish with an orange peel, Enjoy!"
   },{
     name: "manhattan",
     title: "Manhattan",
@@ -41,7 +41,7 @@ const drinkSeed = [
     title: "Whiskey Sour",
     ingredient: ['whiskey', 'lemon juice', 'sugar'],
     picture: "https://cdn.liquor.com/wp-content/uploads/2011/07/05125158/fa-Whiskey-Sour.jpg",
-    instructions: "In a mixing tin add: ,2 oz whiskey, .75 oz lemon juice, 1 tsp. sugar or sugar cube, Shake and stir over cocktail glass, Garnish with cherry or lemon wedge"
+    instructions: "In a mixing tin add:, 2 oz whiskey, .75 oz lemon juice, 1 tsp. sugar or sugar cube, Shake and stir over cocktail glass, Garnish with cherry or lemon wedge"
   },{
     name: "mint-julep",
     title: "Mint Julep",
@@ -160,55 +160,55 @@ const drinkSeed = [
     name: 'vodka-tonic',
     title: 'Vodka and Tonic',
     ingredient: ['vodka', 'tonic water'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2016/08/18132402/vodka-tonic-720x720-recipe.jpg',
     instructions: 'Get a Highball glass with ice and add:, 1.5 oz Vodka, Fill with Tonic Water'
   },{
     name: 'gin-tonic',
     title: 'Gin and Tonic',
     ingredient: ['gin', 'tonic Water'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2016/08/10113036/gin-and-tonic-720x720-article.jpg',
     instructions: 'Get a Highball glass with ice and add: 1.5 oz Gin, Fill with Tonic Water'
   },{
     name: 'john-collins',
     title: 'John Collins',
     ingredient: ['bourbon', 'lemon juice'],
-    picture: '',
+    picture: 'https://mixthatdrink.com/wp-content/uploads/2013/11/john-collins.jpg',
     instructions: 'In a shaker add:, 1.5 oz Bourbon, 1.5 oz lemon juice, Shake and strain into Collins Glass, Fill with Club Soda and stir, Garnish with cherry and orange wedge'
   },{
     name: 'la-water',
     title: 'LA Water',
     ingredient: ['vodka', 'gin', 'tequila', 'rum', 'midori', 'chambord', 'lemon juice'],
-    picture: '',
+    picture: 'http://lumdimsum.com/wp-content/uploads/2014/05/IMG_00122-600x800.jpg',
     instructions: 'Get a Collins glass with ice and add:, .5 oz of each spirit, .5 oz Midori, .5 Chambord, 1.5 oz Lemon juice.'
   },{
     name: 'adios-mf',
     title: 'Adios Mf(My Friend)',
     ingredient: ['vodka', 'gin', 'tequila', 'rum', 'blue curacao', 'lemon juice', '7 up'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2015/10/17000237/1-106675.jpg',
     instructions: 'Get a Collins glass with ice and add: .5 oz of each spirit, .5 oz Blue Curacao, 1.5 lemon juice, Spash of your favorite lemon-lime soda, Garnish with lemon wedge.'
   },{
     name: 'margarita',
     title: 'Margarita',
     ingredient: ['tequila', 'triple sec', 'lime juice', 'sipmle syrup'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2016/11/16132003/margarita-rocks-salt-720sq.jpg',
     instructions: 'In a blender or shaker add: 1.5 oz Tequila, 1 oz triple sec, .75 lime juice, .5 oz simple syrup, Shake and strain or blend, Salt on the rim is optional, Garnish with lime.'
   },{
     name: 'paloma',
     title: 'Paloma',
     ingredient: ['tequila', 'squirt'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2012/12/26092816/paloma-720-720-article.jpg',
     instructions: 'Get a Highball glass with ice and add:, 1.5 oz tequila, Fill with grapefruit-flavored soda (Squirt or Fresca!), Salt on the rim is optional'
   },{
     name: 'michelada',
     title: 'Michelada',
     ingredient: ['beer', 'lime juice', 'worcestershire sauce', 'tomato juice'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2014/02/recipe-michelada.jpg',
     instructions: 'Get a pint glass with ice, Fill with your favorite Mexican beer, .5 oz lime juice, 2-4 dashes of Worcestershire Sauce (or hot sauce, soy sauce), Stir and add tomato juice( tomato juice optional)'
   },{
     name: 'martini',
     title: 'Martini',
     ingredient: ['dry vermouth', 'gin', 'vodka', 'olive'],
-    picture: '',
+    picture: 'https://cdn.liquor.com/wp-content/uploads/2015/03/Draaanks-Dirty-Martini.jpeg',
     instructions: 'In a Shaker add:, .5 oz Dry Vermouth, 2.5 Gin or Vodka, Shake and strain into chilled Martini glass, Garnish with an olive'
   }
   ];

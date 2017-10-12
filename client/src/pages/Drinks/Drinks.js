@@ -5,30 +5,44 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { FormBtn } from "../../components/Form";
-import { Input } from 'semantic-ui-react';
+// import { Input } from 'semantic-ui-react';
 import { Heart, Cocktail } from '../../components/Icons';
 import Bottom from '../../components/Container';
+import Nav from '../../components/Nav'
+
+import { Sidebar, Segment, Button, Menu, Icon, Header, Input } from 'semantic-ui-react'
+
 
 class Drinks extends Component {
   state = {
     drinks: [],
+    visible: false,
     title: "",
     picture: "",
     ingredient: "",
     instruction: ""
   };
 
+toggleVisibility = () => this.setState({ visible: !this.state.visible });
   componentDidMount() {
     // this.loadDrinks();
   }
 
-  // loadDrinks = () => {
-  //   API.getDrink()
-  //     .then(res =>
-  //       this.setState({ drinks: res.data, title: "", picture: "", ingredient: "", instruction: "" })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
+handleRandomBtn = event => {
+    var ingredientArr = ['club soda', 'tequila', 'rum', '7-up', 'coffee', 'champagne', 'ginger beer', 'lemon juice', 'sweet vermouth', 'gin', 'bitters','simple syrup', 'sugar', 'vodka', 'whiskey', 'soda', 'lime'];
+    var random = Math.floor(Math.random()*ingredientArr.length);
+    var randomChoice = ingredientArr[random];
+    event.preventDefault();
+  
+      API.getDrink(randomChoice)
+      .then(res => {
+        this.setState({
+          drinks: [res.data[0]]
+        })
+      })
+      .catch(err => console.log(err));
+    
+  };
 
 
   handleInputChange = event => {
@@ -66,12 +80,26 @@ class Drinks extends Component {
   // };
 
   render() {
-    // const { visible } = this.state;
+        const { visible } = this.state
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
+      <Nav></Nav>
+      <div>
+      <Sidebar.Pushable as={Segment}>
+          <Sidebar as={Menu} animation='slide along' width='thin' visible={visible} icon='labeled' vertical inverted>
+            <Menu.Item name='cocktail'>
+              <Icon name='cocktail' />
+              Favorite Cocktails
+            </Menu.Item>
+          </Sidebar>
+          <Sidebar.Pusher>
+            <Segment basic>
+
             <MainPanel>
+
+                  <h2 className="jumboContent">
+                  Type in an ingredient, discover new drinks!
+                  </h2>
               <form>
               <Input
                 value={this.state.ingredient}
@@ -89,8 +117,13 @@ class Drinks extends Component {
                 <Cocktail />
               </FormBtn>
             </form>
+            <Button
+                onClick={this.handleRandomBtn}
+              >
+                Random Drink?
+              </Button>
             </MainPanel>
-          </Col>
+
           <Bottom className = 'bottom'>
             {this.state.drinks ? (
               <Card.Group>
@@ -110,17 +143,14 @@ class Drinks extends Component {
               <h3>No Results to Display</h3>
             )}
           </Bottom>
-        </Row>
+
+        </Segment>
+           </Sidebar.Pusher>
+         </Sidebar.Pushable>
+         </div>
       </Container>
     );
   }
 }
 
 export default Drinks;
-
-// <div class="content">
-//                           <span class="right floated">
-//                             <i class="heart outline like icon"></i>
-//                             Fav: {drink.favorite}
-//                           </span>
-//                           </div>

@@ -9,7 +9,7 @@
 
 
 import React from 'react'
-import { Grid, Message, Header } from 'semantic-ui-react'
+import { Grid, Message, Header  } from 'semantic-ui-react'
 import "./Jumbotron.css"
 
 
@@ -18,10 +18,7 @@ const MainPanel = ({children}) => (
    <Grid.Row >
       <Grid.Column style={{ minHeight: 500, padding: '0em 3em' }}>
       <Message>
-          <Header as='h1'>Shaker!</Header>
-          <p className="jumboContent">
-          Type in an ingredient, discover new drinks!
-          </p>
+        <Header as='h1'>Shaker!</Header>
           {children}
       </Message>
 
