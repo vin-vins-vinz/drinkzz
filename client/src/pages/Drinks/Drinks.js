@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MainPanel from "../../components/Jumbotron";
-import {Card, Image, Button, Content, i } from "semantic-ui-react"
+import {Card, Image } from "semantic-ui-react"
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -29,29 +29,13 @@ toggleVisibility = () => this.setState({ visible: !this.state.visible });
     // this.loadDrinks();
   }
 
-handleRandomBtn = event => {
-    var ingredientArr = ['club soda', 'tequila', 'rum', '7-up', 'coffee', 'champagne', 'ginger beer', 'lemon juice', 'sweet vermouth', 'gin', 'bitters','simple syrup', 'sugar', 'vodka', 'whiskey', 'soda', 'lime'];
-    var random = Math.floor(Math.random()*ingredientArr.length);
-    var randomChoice = ingredientArr[random];
-    event.preventDefault();
-  
-      API.getDrink(randomChoice)
-      .then(res => {
-        this.setState({
-          drinks: [res.data[0]]
-        })
-      })
-      .catch(err => console.log(err));
-    
-  };
-
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
+
 
   handleIngredientFormSubmit = event => {
     event.preventDefault();
@@ -85,19 +69,19 @@ handleRandomBtn = event => {
     
   };
 
-  // handleDrinkTypeFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.userSelectedType) {
-  //     API.getDrinkByType(this.state.userSelectedType)
-  //       .then(res => {
-  //         this.setState({
-  //           drinks: res.data
-  //         })
-  //       })
-  //       .catch(err => console.log(err));
-  //   }
-  // };
+  handleAllBtn = event => {
+    event.preventDefault();
+      API.getAllDrinks()
+      .then(res => {
+        this.setState({
+          drinks: res.data, picture: "", title: "",
+        })
+      })
+      .catch(err => console.log(err));
+  };
 
+
+  
   render() {
         const { visible } = this.state
     return (
@@ -119,6 +103,12 @@ handleRandomBtn = event => {
                   <h2 className="jumboContent">
                   Type in an ingredient, discover new drinks!
                   </h2>
+
+                  <Button icon
+                    onClick={this.handleAllBtn}
+                  >
+                  <Icon name='grid layout' />
+                  </Button>
               <form>
               <Input
                 value={this.state.ingredient}

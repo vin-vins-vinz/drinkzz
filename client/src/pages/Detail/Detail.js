@@ -15,8 +15,8 @@ class Detail extends Component {
       instructions: ""
     }
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+  // When this component mounts, grab the drink with the _id of this.props.match.params.id
+  // e.g. localhost:3000/drinks/599dcb67f0f16317844583fc
   componentDidMount() {
     console.log(this.props.match.params.id)
     API.getDetail(this.props.match.params.id)

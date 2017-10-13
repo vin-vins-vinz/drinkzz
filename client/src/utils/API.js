@@ -1,47 +1,22 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  // getBooks: function() {
-  //   return axios.get("/api/books");
-  // },
-  // Gets the drink with the given ingredient
 
+  // Gets the drink with the given ingredient
   getDrink: function(ingredient) {
     console.log(ingredient);
     return axios.get("/api/drinks/search/" + ingredient);
   },
+  
+  // Gets the drink with the related _id
   getDetail: function(id) {
     console.log(id);
     return axios.get("/api/drinks/" + id);
   },
 
-
+  // Get all drinks in database
+  getAllDrinks: function(req, res) {
+    return axios.get("/api/drinks");
+  }
   
-  // getDrink: function(ingredient) {
-  //   console.log("Query Run");
-  //   return axios.get("/api/drinks/" + ingredient, {
-  //     params: {
-  //       "ingredient": ingredient
-  //     }
-  //   })
-  //   .then(function(results) {
-  //     console.log("Axios Results", results.data.response);
-  //     return results.data.response;
-  //   });
-  // }
-    
-
-  // // Gets the drink with the given id
-  // getDrinkById: function(id) {
-  //   return axios.get("/api/drinks/" + id);
-  // },
-  // // Deletes the book with the given id
-  // deleteBook: function(id) {
-  //   return axios.delete("/api/books/" + id);
-  // },
-  // // Saves a book to the database
-  // saveBook: function(bookData) {
-  //   return axios.post("/api/books", bookData);
-  //}
 };
