@@ -1,0 +1,11 @@
+#footer {
+        background-color: black;
+        color: darkslategrey;
+        position: center;
+        bottom: 0px;
+        width: 100%;
+        padding: 0;
+        height: 2%;
+        text-align: bottom;
+        background-image: none;
+    }

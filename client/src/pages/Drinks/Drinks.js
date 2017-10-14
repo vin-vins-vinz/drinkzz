@@ -9,6 +9,7 @@ import { FormBtn } from "../../components/Form";
 import { Heart, Cocktail } from '../../components/Icons';
 import Bottom from '../../components/Container';
 import Nav from '../../components/Nav'
+import Footer from '../../components/Footer'
 
 import { Sidebar, Segment, Button, Menu, Icon, Header, Input } from 'semantic-ui-react'
 
@@ -80,8 +81,15 @@ toggleVisibility = () => this.setState({ visible: !this.state.visible });
       .catch(err => console.log(err));
   };
 
+  // handleAddFavBtn = event => {
+  //   var userFavDrinks = [];
+  //   event.preventDefault();
+  //     API.
 
-  
+  // };
+
+
+
   render() {
         const { visible } = this.state
     return (
@@ -140,24 +148,40 @@ toggleVisibility = () => this.setState({ visible: !this.state.visible });
                   <Card raised key={drink._id}>
                     <Link to={"/drinks/" + drink._id}>
                       <Image src={drink.picture} />
+                    </Link>
                         <Card.Content>
                           
-                          <Card.Header><Heart />{drink.title}</Card.Header>
+                          <Card.Header>
+                            <Button icon
+                            onClick={this.handleAddFavBtn}
+                            >
+                            <Icon name='heart' />
+                            </Button>
+                          {drink.title}
+                          </Card.Header>
                         </Card.Content>
-                    </Link>
+                    
                     </Card>
                 )}
               </Card.Group>
             ) : (
               <h3>No Results to Display</h3>
             )}
+          
           </Bottom>
-
-        </Segment>
+          
+          
+          <Footer id = 'footer'>
+          </Footer>
+        
+         </Segment>
            </Sidebar.Pusher>
          </Sidebar.Pushable>
          </div>
+    
+         
       </Container>
+    
     );
   }
 }

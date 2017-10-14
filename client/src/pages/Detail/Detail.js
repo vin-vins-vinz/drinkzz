@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import "./Detail.css"
 import { Header } from 'semantic-ui-react'
 import Nav from '../../components/Nav'
+import Footer from '../../components/Footer'
 // import Sidebar from '../../components/Sidebar'
 
 class Detail extends Component {
@@ -61,6 +62,9 @@ class Detail extends Component {
             <Link to="/">← Back to Homepage</Link>
           </Col>
         </Row>
+
+        <Footer id='footer'>
+        </Footer>
       </Container>
     );
   }
